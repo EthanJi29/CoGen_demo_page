@@ -1,5 +1,4 @@
 Hello
 
-```
-https://anonymous-github-8ab1cv.github.io/paper-6119/
-```
+Our demo page: https://ethanji29.github.io/CoGen_demo_page/
+
