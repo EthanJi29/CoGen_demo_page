@@ -19,7 +19,7 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1600px;
             margin: 0 auto;
             padding: 2rem;
         }
@@ -35,6 +35,12 @@
             font-size: 2.5rem;
             margin-bottom: 1rem;
             color: #2c3e50;
+        }
+
+        .authors {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
         }
 
         .paper-id {
@@ -112,6 +118,9 @@
 <body>
     <header>
         <h1>CoGen: 3D Consistent Video Generation via Adaptive Conditioning for Autonomous Driving</h1>
+        <div class="authors">
+            Yishen Ji, Ziyue Zhu, Zhenxin Zhu, Kaixin Xiong, Ming Lu, Zhiqi Li, Lijun Zhou, Haiyang Sun, Bing Wang, Tong Lu
+        </div>
         <!-- <div class="paper-id">Paper ID: 6119</div> -->
     </header>
 
@@ -128,8 +137,9 @@
                 <p>Overview of the CoGen framework</p>
             </div>
             <div class="figure-container">
-                <img src="assets/figures/vis_condition.png" alt="Visualization of the generated 3D conditions">
-                <p>Visualization of the generated 3D conditions</p>
+                <img src="assets/figures/vis_condition.png" alt="Visualization of the generated 3D conditions" width="60%">
+                <p>Visualization of the 3d semantics conditions used for
+                    video generation</p>
             </div>
         </section>
 
@@ -172,16 +182,13 @@
         <section class="demo-section">
             <h2>Results</h2>
             <div class="figure-container">
-                <img src="assets/figures/results.png" alt="Results">
-                <p>Generation results</p>
+                <img src="assets/figures/results.png" alt="Results" width="60%">
             </div>
             <div class="figure-container fvd-comparison">
-                <img src="assets/figures/fvd_comparison_all.png" alt="FVD Comparison">
-                <p>FVD comparison results</p>
+                <img src="assets/figures/fvd_comparison_all.png" alt="FVD Comparison" width="40%">
             </div>
             <div class="figure-container">
                 <img src="assets/figures/mask_loss.png" alt="Mask Loss">
-                <p>Mask loss analysis</p>
             </div>
         </section>
     </div>
