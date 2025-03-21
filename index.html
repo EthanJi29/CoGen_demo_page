@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoGen: 3D Consistent Video Generation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            background-color: #fff;
+            padding: 3rem 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .paper-id {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .abstract {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .abstract h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .demo-section {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .demo-section h2 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+        }
+
+        .video-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .video-container {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .video-container video {
+            width: 100%;
+            border-radius: 4px;
+        }
+
+        .figure-container {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .figure-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .fvd-comparison img {
+            max-width: 70%;
+        }
+
+        .figure-container p {
+            margin-top: 1rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CoGen: 3D Consistent Video Generation via Adaptive Conditioning for Autonomous Driving</h1>
+        <!-- <div class="paper-id">Paper ID: 6119</div> -->
+    </header>
+
+    <div class="container">
+        <section class="abstract">
+            <h2>Abstract</h2>
+            <p>Recent progress in driving video generation has shown significant potential for enhancing self-driving systems by providing scalable and controllable training data. Although pretrained state-of-the-art generation models, guided by 2D layout conditions (e.g., HD maps and bounding boxes), can produce photorealistic driving videos, achieving controllable multi-view videos with high 3D consistency remains a major challenge. To tackle this, we introduce a novel spatial adaptive generation framework, CoGen, which leverages advances in 3D generation to improve performance in two key aspects: (i) To ensure 3D consistency, we first generate high-quality, controllable 3D conditions that capture the geometry of driving scenes. By replacing coarse 2D conditions with these fine-grained 3D representations, our approach significantly enhances the spatial consistency of the generated videos. (ii) Additionally, we introduce a consistency adapter module to strengthen the robustness of the model to multi-condition control. The results demonstrate that this method excels in preserving geometric fidelity and visual realism, offering a reliable video generation solution for autonomous driving.</p>
+        </section>
+
+        <section class="demo-section">
+            <h2>Model</h2>
+            <div class="figure-container">
+                <img src="assets/figures/total_model.png" alt="Model Architecture">
+                <p>Overview of the CoGen framework</p>
+            </div>
+            <div class="figure-container">
+                <img src="assets/figures/vis_condition.png" alt="Visualization of the generated 3D conditions">
+                <p>Visualization of the generated 3D conditions</p>
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <h2>Video Demos</h2>
+            <div class="video-grid">
+                <div class="video-container">
+                    <video controls>
+                        <source src="assets/demo_videos/15c59626df6b4f96bb7ef7c5c1797159_12fps.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-container">
+                    <video controls>
+                        <source src="assets/demo_videos/23d02c83708b4f5e9579bbd99370a672_12fps.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-container">
+                    <video controls>
+                        <source src="assets/demo_videos/45eda670b5a840acbb730aac15e63b19_12fps.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-container">
+                    <video controls>
+                        <source src="assets/demo_videos/a4782f7ade234010b5b50553403f6e79_12fps.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-container">
+                    <video controls>
+                        <source src="assets/demo_videos/94cd383effba4e688570233a060a13f4_12fps.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-container">
+                    <video controls>
+                        <source src="assets/demo_videos/806011e8a7114eca971fd0f6b95bcd4b_12fps.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <h2>Results</h2>
+            <div class="figure-container">
+                <img src="assets/figures/results.png" alt="Results">
+                <p>Generation results</p>
+            </div>
+            <div class="figure-container fvd-comparison">
+                <img src="assets/figures/fvd_comparison_all.png" alt="FVD Comparison">
+                <p>FVD comparison results</p>
+            </div>
+            <div class="figure-container">
+                <img src="assets/figures/mask_loss.png" alt="Mask Loss">
+                <p>Mask loss analysis</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
